@@ -1,14 +1,13 @@
 #include<iostream>
-#include<stdlib.h>
 
 using namespace std;
 
 int main(){
 	
- int boletas, total_a_pagar=0, sectores, total_boletas_vendidas=0, estado_estadio, pregunta2=0;
- bool pregunta;
+ int boletas, total_a_pagar=0, sectores, total_boletas_vendidas=0, estado_estadio=46692;
+
  
-  for(int i= 0; i<=46692; i++){
+  while(estado_estadio>0){
   
   
      
@@ -24,38 +23,35 @@ int main(){
   cout<<"\n                  6. Tribuna Occidental baja: 100000."<<endl;
   
   
-  cout<<"¿Desea comprar boletas? 1.si 2.no"<<endl;
-  cin>>pregunta2; 
   
-while(pregunta2!=1 && pregunta2==2){
 	
-  cout<<"\n                    ¿En que sector quiere sus acientos? ";
+  cout<<"\n                    Â¿En que sector quiere sus acientos? ";
   cin>>sectores;
-  cout<<"\n                  ¿Cuantos boletas desea en esta tribuna? ";
+  cout<<"\n                  Â¿Cuantos boletas desea en esta tribuna? ";
   cin>>boletas;
 	
-  if(sectores==1){
+  if(sectores==1 && boletas<=46692){
   	
   	total_a_pagar=20000*boletas;
   	cout<<"hola";
   
-  }else if(sectores==2){
+  }else if(sectores==2 && boletas<=10){
   	
   	total_a_pagar=20000*boletas;
   	
-  }else if(sectores==3){
+  }else if(sectores==3 && boletas<=10){
   	
   	total_a_pagar=40000*boletas;
   	
-  }else if(sectores==4){
+  }else if(sectores==4 && boletas<=10){
   	
   	total_a_pagar=60000*boletas;
   	
-  }else if(sectores==5){
+  }else if(sectores==5 && boletas<=10){
   	
   	total_a_pagar=80000*boletas;
   	
-  }else if(sectores==6){
+  }else if(sectores==6 && boletas<=10){
   	
   	total_a_pagar=100000*boletas;
   	
@@ -63,18 +59,18 @@ while(pregunta2!=1 && pregunta2==2){
   	
   	cout<<"El sector de la tribuna seleccionado no existe."<<endl;
   	
+  }else if(boletas>10){
+      
+      cout<<"Ese numero de boletas no esta permitido."<<endl;
+      
   }
+   
   
-  cout<<"¿Desea comprar otras boletas en otra tribuna? 1.si 2.no"<<endl;
-  cin>>pregunta2; 
 
- cout<<"El total a pagar por las boletas es de: "<<total_a_pagar;
-  
-  }
+  cout<<"El total a pagar por las boletas es de: "<<total_a_pagar;
 
 
-
-  total_boletas_vendidas=+boletas;
+  total_boletas_vendidas+=boletas;
   boletas=0;
   
   cout<<"\nel total de boletas vendidas son: "<<total_boletas_vendidas<<endl;
@@ -82,26 +78,17 @@ while(pregunta2!=1 && pregunta2==2){
   if(total_boletas_vendidas==46692){
   	
   	cout<<"\nel estadio se encuentra en su maxima capacidad."<<endl;
-  	
+  	estado_estadio-=total_boletas_vendidas;
   	
   }else{
   	
-  	estado_estadio=46692-total_boletas_vendidas;
+  	estado_estadio-=total_boletas_vendidas;
   	
   	cout<<"\nel estadio no se encuentra en su maxima capacidad y faltan: "<<estado_estadio<<endl;
   	
   }
   
-  cout<<"¿El estadio se encuentra en su maxima capacidad? 1.si 2.no"<<endl;
-  cin>>pregunta;
-  
-  if(pregunta==1){
-  
-  i=99999;
-  
-  }
 
 }
 
 }
-
