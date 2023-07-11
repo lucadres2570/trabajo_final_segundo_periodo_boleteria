@@ -10,24 +10,24 @@ int main(){
  system("COLOR A0");	
  system("mode con cols=85 lines=30"); //85 no te olvides 	
 	
- int boletas, total_a_pagar=0, sectores, total_boletas_vendidas=0, estado_estadio=45480;
+ int boletas=0, total_a_pagar=0, sectores, total_boletas_vendidas=0, estado_estadio=45480;
  
  int max_norte = 9838, max_sur = 9877, max_oriental = 12425, max_occi_alta = 8518, max_occi_baja = 4822;
  
- int bol_norte, bol_sur, bol_oriental, bol_occi_alta, bol_occi_baja;
+ 
  
  while(estado_estadio>0){
   
      
-  cout<<"***************************************************************************"<<endl;   
-  cout<<"********************BIENVENIDO AL ESTADIO METROPOLITANO********************"<<endl;
-  cout<<"******************************ROBERTO MELENDEZ*****************************"<<endl;
-  cout<<"***************************************************************************"<<endl;
+  cout<<"*************************************************************************************"<<endl;   
+  cout<<"*************************BIENVENIDO AL ESTADIO METROPOLITANO*************************"<<endl;
+  cout<<"***********************************ROBERTO MELENDEZ**********************************"<<endl;
+  cout<<"*************************************************************************************"<<endl;
   
-  cout<<"Recomendaciones:"<<endl;
-  cout<<"1. Todo niño paga su boleta."<<endl;
-  cout<<"2. Acate las normas de convivencia dentro y fuera del estadio."<<endl;
-  cout<<"3. Verifique que su boleta sea la original y no lo compre a revendedores."<<endl;
+  cout<<"                                 Recomendaciones:"<<endl;
+  cout<<"      1. Todo menor de edad paga su boleta."<<endl;
+  cout<<"      2. Acate las normas de convivencia dentro y fuera del estadio."<<endl;
+  cout<<"      3. Verifique que su boleta sea la original y no lo compre a revendedores."<<endl;
   
   
   cout<<"\n                          Sectores del estadio"<<endl;
@@ -38,106 +38,126 @@ int main(){
   cout<<"\n                  5. Tribuna Occidental baja: 100000."<<endl;//maximo tribuna 4.822
   
   
-  cout<<"\n                    ¿En que sector quiere sus acientos? ";
+  cout<<"\n                          Ingrese la tribuna.";
   cin>>sectores;
   
   
   switch(sectores){
   	case 1:
-  		cout<<"\n                  ¿Cuantos boletas desea en esta tribuna? ";
-  		cin>>bol_norte;
-  		max_norte-=bol_norte;
-  		boletas+=bol_norte;
+  		cout<<"\n          Ingrese la cantidad de boletas que va a comprar";
+  		cin>>boletas;
   		
 
-  		if(boletas<=45480 && max_norte>-1){
-  	
-  	       total_a_pagar=20000*bol_norte;
-  
+  		if(boletas<=max_norte && boletas<=10){
+  			
+    	       total_a_pagar=20000*boletas;
+    	       cout<<"\nEl total a pagar por las boletas es de: "<<total_a_pagar;
+    	       max_norte-=boletas;
+    	       
+        }else{
+        	
+        	cout<<"\nLa tribuna seleccionada ya se encuentra en su maxima capacidad."<<endl;
+        	boletas=0;
         }
-        bol_norte=0;
+
+    
   	break;	
   	
   	case 2:
-  		cout<<"\n                  ¿Cuantos boletas desea en esta tribuna? ";
-  		cin>>bol_sur;
-  		max_sur-=bol_sur;
-  		boletas+=bol_sur;
+  		cout<<"\n          Ingrese la cantidad de boletas que va a comprar";
+  		cin>>boletas;
   		
-  		if(boletas<=10 && max_sur>=1){
-  	
-  	      	total_a_pagar=20000*boletas;
-  	
-          }
-  		
+
+  		if(boletas<=max_sur && boletas<=10){
+  			
+    	       total_a_pagar=20000*boletas;
+    	       cout<<"\nEl total a pagar por las boletas es de: "<<total_a_pagar;
+    	       max_sur-=boletas;
+    	       
+        }else{
+        	
+        	cout<<"\nLa tribuna seleccionada ya se encuentra en su maxima capacidad."<<endl;
+        	boletas=0;
+        }
+
+    
   	break;
   	
   	case 3:
-  		cout<<"\n                  ¿Cuantos boletas desea en esta tribuna? ";
-  		cin>>bol_oriental;
-  		max_oriental-=bol_oriental;
-  		boletas+=bol_oriental;
+  		cout<<"\n          Ingrese la cantidad de boletas que va a comprar";
+  		cin>>boletas;
   		
-  		if(boletas<=10 && max_oriental>=1){
-  	
-  			total_a_pagar=40000*boletas;
-  	
-  		  }
-  		
+
+  		if(boletas<=max_oriental && boletas<=10){
+  			
+    	       total_a_pagar=40000*boletas;
+    	       cout<<"\nEl total a pagar por las boletas es de: "<<total_a_pagar;
+    	       max_oriental-=boletas;
+    	       
+        }else{
+        	
+        	cout<<"\nLa tribuna seleccionada ya se encuentra en su maxima capacidad."<<endl;
+        	boletas=0;
+        }
+
+    
   	break;
   	
   	case 4:
-  		cout<<"\n                  ¿Cuantos boletas desea en esta tribuna? ";
-  		cin>>bol_occi_alta;
-  		max_occi_alta-=bol_occi_alta;
-  		boletas+=bol_occi_alta;
+  		cout<<"\n          Ingrese la cantidad de boletas que va a comprar";
+  		cin>>boletas;
   		
-  		if(boletas<=10 && max_occi_alta>=1){
-  	
-  			total_a_pagar=70000*boletas;
-  	
-          }
-  		
+
+  		if(boletas<=max_occi_alta && boletas<=10){
+  			
+    	       total_a_pagar=70000*boletas;
+    	       cout<<"\nEl total a pagar por las boletas es de: "<<total_a_pagar;
+    	       max_occi_alta-=boletas;
+    	       
+        }else{
+        	
+        	cout<<"\nLa tribuna seleccionada ya se encuentra en su maxima capacidad."<<endl;
+        	boletas=0;
+        }
+
+    
   	break;
   	
   	case 5:
-  		cout<<"\n                  ¿Cuantos boletas desea en esta tribuna? ";
-  		cin>>bol_occi_baja;
-  		max_occi_baja-=bol_occi_baja;
-  		boletas+=bol_occi_baja;
+  		cout<<"\n          Ingrese la cantidad de boletas que va a comprar";
+  		cin>>boletas;
   		
-  		if(boletas<=10 && max_occi_baja>=1){
-  	
-  			total_a_pagar=100000*boletas;
-  	
-          }
-  		
+
+  		if(boletas<=max_occi_baja && boletas<=10){
+  			
+    	       total_a_pagar=100000*boletas;
+    	       cout<<"\nEl total a pagar por las boletas es de: "<<total_a_pagar;
+    	       max_occi_baja-=boletas;
+    	       
+        }else{
+        	
+        	cout<<"\nLa tribuna seleccionada ya se encuentra en su maxima capacidad."<<endl;
+        	boletas=0;
+        }
+
+    
   	break;
   	
   	default:
-  	    cout<<"El sector de la tribuna seleccionado no existe."<<endl;
+  	    cout<<"\nEl sector de la tribuna seleccionado no existe."<<endl;
   	    boletas=0;
   }
  
 
-    if(boletas>45480){
+    if(boletas>10){
       
-      cout<<"Ese numero de boletas no esta permitido."<<endl;
+      cout<<"\nEse cantidad de boletas no esta permitido."<<endl;
       boletas=0;
       
-  }else if(max_norte<0 || max_sur<0 || max_oriental<0 || max_occi_alta<0 || max_occi_baja<0){
-  	
-  	cout<<"La tribuna seleccionada ya se encuentra en su maxima capacidad."<<endl;
-  	boletas=0;
-  	
   }
    
-
-  cout<<"El total a pagar por las boletas es de: "<<total_a_pagar;
-
-
-  total_boletas_vendidas+=boletas;
-  boletas=0;
+   total_boletas_vendidas+=boletas;
+   boletas=0;
   
   cout<<"\nel total de boletas vendidas son: "<<total_boletas_vendidas<<endl;
   
@@ -147,7 +167,10 @@ int main(){
   	cout<<"\nel estadio se encuentra en su maxima capacidad."<<endl;
   	estado_estadio-=total_boletas_vendidas;
   	
-  }else{
+  }
+  
+  if(total_boletas_vendidas!=45480){
+  	
   	
   	estado_estadio-=total_boletas_vendidas;
   	
