@@ -24,6 +24,10 @@ int main(){
   cout<<"***********************************ROBERTO MELENDEZ**********************************"<<endl;
   cout<<"*************************************************************************************"<<endl;
   
+  cout<<"\n            Primera fecha cuadrangulares semifinales Liga Aguila 1-2019"<<endl;
+  cout<<"\n                          Junior vs. Atletico Nacional"<<endl;
+  cout<<"\n                          Domingo 12 de Mayo - 7:00 PM"<<endl;
+  
   cout<<"                                 Recomendaciones:"<<endl;
   cout<<"      1. Todo menor de edad paga su boleta."<<endl;
   cout<<"      2. Acate las normas de convivencia dentro y fuera del estadio."<<endl;
@@ -151,7 +155,7 @@ int main(){
 
     if(boletas>10){
       
-      cout<<"\nEse cantidad de boletas no esta permitido."<<endl;
+      cout<<"\nEsa cantidad de boletas no esta permitido."<<endl;
       boletas=0;
       
   }
@@ -159,12 +163,12 @@ int main(){
    total_boletas_vendidas+=boletas;
    boletas=0;
   
-  cout<<"\nel total de boletas vendidas son: "<<total_boletas_vendidas<<endl;
+  cout<<"\nEl total de boletas vendidas son: "<<total_boletas_vendidas<<endl;
   
   
   if(total_boletas_vendidas==45480){
   	
-  	cout<<"\nel estadio se encuentra en su maxima capacidad."<<endl;
+  	cout<<"\nEl estadio se encuentra en su maxima capacidad."<<endl;
   	estado_estadio-=total_boletas_vendidas;
   	
   }
@@ -174,7 +178,7 @@ int main(){
   	
   	estado_estadio-=total_boletas_vendidas;
   	
-  	cout<<"\nel estadio no se encuentra en su maxima capacidad y faltan "<<estado_estadio<<" boletas."<<endl;
+  	cout<<"\nEl estadio no se encuentra en su maxima capacidad y faltan "<<estado_estadio<<" boletas."<<endl;
   	
   }
   
